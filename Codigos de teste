@@ -35,6 +35,17 @@ inicializa_tabuleiro_teste_captura([
 	[🟨, ⚪, 🟨, ⚪, 🟨, ⚪, 🟨, ⚪]
 ]).
 
+inicializa_tabuleiro_teste_DAMA__captura([
+	[⚫, 🟨, ⚫, 🟨, ⚫, 🟨, ⚫, 🟨],
+	[🟨, ⚫, 🟨, ⚫, 🟨, ⚫, 🟨, ⚫],
+	[⚫, 🟨, ⚫, 🟨, ⚫, 🟨, ⚫, 🟨],
+	[🟨, 🟨, 🟨, 🟨, 🟨, 🟨, 🟨, 🟨],
+	[🟨, 🟨, 🟨, ⚪, 🟨, 🟨, 🟨, 🟨],
+	[🟨, 🟨, 🟨, 🟨, ⚪, 🟨, 🟨, 🟨], 
+	[⚪, 🟨, ⚪, 🏴, ⚪, 🟨, ⚪, 🟨],
+	[🟨, ⚪, 🟨, ⚪, 🟨, ⚪, 🟨, ⚪]
+]).
+
 % Loop principal do jogo com tabuleiro de teste
 jogar_teste :-
 	inicializa_tabuleiro_teste(Tabuleiro),
@@ -53,10 +64,8 @@ jogar_teste_captura :-
 
 jogar_teste_captura_branca:-
 	inicializa_tabuleiro_teste_captura(Tabuleiro),
-	jogar(Tabuleiro, ⚪). % Começa com as peças pretas
+    jogar(Tabuleiro, ⚪). % Começa com as peças pretas
 
-
-? - jogar_teste → Preta vira dama
-jogar_teste_branca → Branca vira dama
-jogar_teste_captura → Preta captura branca
-jogar_teste_captura_branca→ Branca captura preta
+jogar_teste_DAMA_captura :-
+	inicializa_tabuleiro_teste_DAMA__captura(Tabuleiro),
+	jogar(Tabuleiro, ⚫). % Começa com as peças pretas
